@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "tag": "Digital Agency",
+      "title": "Webtellisense",
+      "description": "End-to-end visibility strategy for businesses — SEO, web design, social content, Google Business Profile, and more. Built to make small businesses impossible to ignore.",
+      "image": ""
+    },
+    {
+      "tag": "Growth Program",
+      "title": "Heroes Challenge",
+      "description": "A 30-day free business growth challenge designed to help local businesses get discovered, build trust, and show up consistently online. Day by day, task by task.",
+      "image": ""
+    },
+    {
+      "tag": "Mentorship",
+      "title": "Design Training",
+      "description": "Hands-on graphic design mentorship — walking students through the fundamentals with structured briefs, clear deliverables, and real creative direction from concept to output.",
+      "image": ""
+    },
+    {
+      "tag": "Content Strategy",
+      "title": "Brand Storytelling",
+      "description": "Social content built around personal voice — album curation series, business visibility posts, and community-first narratives that move people before they move products.",
+      "image": ""
+    }
+  ]
+}

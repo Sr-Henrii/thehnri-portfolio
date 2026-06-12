@@ -1,0 +1,35 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "works"
+    label: "Work / Projects"
+    files:
+      - file: "content/works.json"
+        label: "Selected Projects"
+        name: "works"
+        fields:
+          - label: "Projects"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Category Tag", name: "tag", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Image (optional)", name: "image", widget: "image", required: false}
+
+  - name: "site"
+    label: "Site Settings"
+    files:
+      - file: "content/site.json"
+        label: "General Info"
+        name: "site"
+        fields:
+          - {label: "Name", name: "name", widget: "string"}
+          - {label: "Location / Eyebrow Text", name: "eyebrow", widget: "string"}
+          - {label: "Hero Subtitle", name: "subtitle", widget: "text"}
+          - {label: "About Text", name: "about", widget: "text"}

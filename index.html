@@ -1,509 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>THEHNRI — Digital Creative</title>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:     #FFFFFF;
-      --text:   #111111;
-      --muted:  #888888;
-      --soft:   #BBBBBB;
-      --accent: #E05C2A;
-      --surface:#F6F5F3;
-      --border: #E5E5E5;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    /* ── NAV ── */
-    nav {
-      padding: 1.5rem 2.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      background: var(--bg);
-      z-index: 10;
-    }
-
-    .nav-name {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: -0.01em;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 0.83rem;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-
-    .nav-links a:hover { color: var(--text); }
-
-    .nav-status {
-      font-size: 0.8rem;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-    }
-
-    .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #4CAF50;
-      flex-shrink: 0;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      padding: 7rem 2.5rem 6rem;
-      max-width: 960px;
-    }
-
-    .eyebrow {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--accent);
-      margin-bottom: 2rem;
-    }
-
-    h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(3.5rem, 9vw, 7.5rem);
-      font-weight: 800;
-      line-height: 0.93;
-      letter-spacing: -0.04em;
-      margin-bottom: 2.5rem;
-    }
-
-    h1 em {
-      font-style: normal;
-      color: var(--accent);
-    }
-
-    .hero-sub {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 440px;
-      line-height: 1.75;
-      font-weight: 300;
-    }
-
-    /* ── SHARED SECTION ── */
-    .section {
-      padding: 5rem 2.5rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .section-head {
-      margin-bottom: 3rem;
-    }
-
-    .section-label {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--soft);
-      display: block;
-      margin-bottom: 0.4rem;
-    }
-
-    h2 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.35rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    /* ── WORK GRID ── */
-    .work-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      border: 1px solid var(--border);
-      gap: 1px;
-      background: var(--border);
-    }
-
-    .work-card {
-      background: var(--bg);
-      padding: 2rem 1.75rem;
-      transition: background 0.15s;
-    }
-
-    .work-card:hover { background: var(--surface); }
-
-    .work-tag {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    .work-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 0.65rem;
-      letter-spacing: -0.015em;
-    }
-
-    .work-desc {
-      font-size: 0.87rem;
-      color: var(--muted);
-      line-height: 1.7;
-      font-weight: 300;
-    }
-
-    /* ── SERVICES ── */
-    .service-list { list-style: none; }
-
-    .service-item {
-      padding: 1.4rem 0;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 2rem;
-    }
-
-    .service-name {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-
-    .service-desc {
-      font-size: 0.85rem;
-      color: var(--muted);
-      text-align: right;
-      max-width: 380px;
-      font-weight: 300;
-    }
-
-    /* ── ABOUT ── */
-    .about-body {
-      font-size: 1.1rem;
-      line-height: 1.85;
-      max-width: 600px;
-      color: #333;
-      font-weight: 300;
-    }
-
-    .about-body strong {
-      font-weight: 500;
-      color: var(--text);
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      padding: 4.5rem 2.5rem;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 3rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-cta h3 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 0.95;
-      margin-bottom: 1.5rem;
-    }
-
-    .footer-cta h3 em {
-      font-style: normal;
-      color: var(--accent);
-    }
-
-    .cta-link {
-      display: inline-block;
-      font-family: 'Syne', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--bg);
-      background: var(--text);
-      text-decoration: none;
-      padding: 0.75rem 1.75rem;
-      transition: background 0.15s;
-    }
-
-    .cta-link:hover { background: var(--accent); }
-
-    .footer-meta {
-      text-align: right;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-      align-items: flex-end;
-      margin-bottom: 1.5rem;
-    }
-
-    .footer-links a {
-      font-size: 0.83rem;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-
-    .footer-links a:hover { color: var(--text); }
-
-    .footer-copy {
-      font-size: 0.75rem;
-      color: var(--soft);
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 640px) {
-      nav { padding: 1.25rem 1.5rem; }
-      .nav-links { display: none; }
-      .hero { padding: 4.5rem 1.5rem 4rem; }
-      .section { padding: 3.5rem 1.5rem; }
-      .service-item { flex-direction: column; gap: 0.5rem; }
-      .service-desc { text-align: left; }
-      footer { padding: 3rem 1.5rem; flex-direction: column; align-items: flex-start; }
-      .footer-meta { text-align: left; }
-      .footer-links { align-items: flex-start; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      * { transition: none !important; }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THEHNRI — Digital Creative & Brand Strategist</title>
+  
+  <!-- SEO & Social Sharing (Open Graph) -->
+  <meta name="description" content="Portfolio of THEHNRI — Digital Creative and Founder of Webtellisense. Based in Eket, Akwa Ibom." />
+  <meta property="og:title" content="THEHNRI — Digital Creative" />
+  <meta property="og:description" content="Helping businesses grow online through design, visibility strategy, and storytelling." />
+  <meta property="og:type" content="website" />
+  
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- Navigation -->
   <nav>
-    <span class="nav-name">THEHNRI</span>
-    <ul class="nav-links">
+    <a href="#" class="logo">THEHNRI</a>
+    <ul>
       <li><a href="#work">Work</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <span class="nav-status">
-      <span class="dot"></span>
-      Available
+    <span class="badge">
+      <span class="dot"></span> Available for projects
     </span>
   </nav>
 
-  <!-- HERO -->
-  <div class="hero">
-    <p class="eyebrow" id="site-eyebrow">Digital Creative &nbsp;·&nbsp; Eket, Akwa Ibom</p>
+  <!-- Hero Section -->
+  <header class="hero">
+    <p class="location">Digital Creative &middot; Eket, Akwa Ibom</p>
     <h1>
-      Brand.<br>
-      Visibility.<br>
+      Brand.<br />
+      Visibility.<br />
       <em>Story.</em>
     </h1>
-    <p class="hero-sub" id="site-subtitle">
+    <p class="intro">
       I help businesses grow their presence online — through sharp design,
       clear strategy, and content that actually connects with people.
     </p>
-  </div>
+  </header>
 
-  <!-- WORK -->
-  <div id="work" class="section">
-    <div class="section-head">
-      <span class="section-label">Work</span>
-      <h2>Selected projects</h2>
+  <!-- Work Section -->
+  <section id="work">
+    <div class="section-header">
+      <span>Work</span>
+      <h2>Selected Projects</h2>
     </div>
-    <div class="work-grid" id="work-grid">
-
-      <!-- The cards below are FALLBACK content shown only if
-           content/works.json fails to load. Once the CMS data
-           loads, this grid is replaced automatically. You can
-           leave these as-is or remove them. -->
-
-      <!-- ============================================
-           HOW TO ADD A NEW WORK ITEM:
-           Copy one ".work-card" block (everything from
-           <div class="work-card"> to its closing </div>)
-           and paste it anywhere in this grid. Then edit:
-             - work-tag   -> category label
-             - work-title -> project name
-             - work-desc  -> short description
-           To add an image, place this inside the card,
-           right after the opening <div class="work-card">:
-             <img src="your-image.jpg" alt="Project name"
-                  style="width:100%; height:160px; object-fit:cover; margin-bottom:1rem; border:1px solid var(--border);">
-      ============================================= -->
-
-      <div class="work-card">
-        <span class="work-tag">Digital Agency</span>
-        <p class="work-title">Webtellisense</p>
-        <p class="work-desc">
+    
+    <div class="projects-grid">
+      <div class="project-card">
+        <span class="tag">Digital Agency</span>
+        <h3>Webtellisense</h3>
+        <p>
           End-to-end visibility strategy for businesses — SEO, web design,
           social content, Google Business Profile, and more. Built to make
           small businesses impossible to ignore.
         </p>
+        <a href="https://webtellisense.com" target="_blank" class="link-btn">Visit Agency &rarr;</a>
       </div>
 
-      <div class="work-card">
-        <span class="work-tag">Growth Program</span>
-        <p class="work-title">Heroes Challenge</p>
-        <p class="work-desc">
+      <div class="project-card">
+        <span class="tag">Growth Program</span>
+        <h3>Heroes Challenge</h3>
+        <p>
           A 30-day free business growth challenge designed to help local
           businesses get discovered, build trust, and show up consistently
           online. Day by day, task by task.
         </p>
       </div>
 
-      <div class="work-card">
-        <span class="work-tag">Mentorship</span>
-        <p class="work-title">Design Training</p>
-        <p class="work-desc">
+      <div class="project-card">
+        <span class="tag">Mentorship</span>
+        <h3>Design Training</h3>
+        <p>
           Hands-on graphic design mentorship — walking students through the
           fundamentals with structured briefs, clear deliverables, and real
           creative direction from concept to output.
         </p>
       </div>
 
-      <div class="work-card">
-        <span class="work-tag">Content Strategy</span>
-        <p class="work-title">Brand Storytelling</p>
-        <p class="work-desc">
+      <div class="project-card">
+        <span class="tag">Content Strategy</span>
+        <h3>Brand Storytelling</h3>
+        <p>
           Social content built around personal voice — album curation series,
           business visibility posts, and community-first narratives that move
           people before they move products.
         </p>
       </div>
-
     </div>
-  </div>
+  </section>
 
-  <!-- SERVICES -->
-  <div id="services" class="section">
-    <div class="section-head">
-      <span class="section-label">Services</span>
-      <h2>What I offer</h2>
+  <!-- Services Section -->
+  <section id="services">
+    <div class="section-header">
+      <span>Services</span>
+      <h2>What I Offer</h2>
     </div>
-    <ul class="service-list">
-      <li class="service-item">
-        <span class="service-name">Web Design</span>
-        <span class="service-desc">Clean, functional websites that represent your business well and actually load fast.</span>
+    <ul class="services-list">
+      <li>
+        <strong>Web Design</strong>
+        <span>Clean, functional websites that represent your business well and load fast.</span>
       </li>
-      <li class="service-item">
-        <span class="service-name">Visibility Strategy</span>
-        <span class="service-desc">SEO, Google Business Profile, and local search — so the right people can find you.</span>
+      <li>
+        <strong>Visibility Strategy</strong>
+        <span>SEO, Google Business Profile, and local search — so the right people can find you.</span>
       </li>
-      <li class="service-item">
-        <span class="service-name">Social Media Content</span>
-        <span class="service-desc">Consistent, on-brand posts that grow engagement and build a real community over time.</span>
+      <li>
+        <strong>Social Media Content</strong>
+        <span>Consistent, on-brand posts that grow engagement and build a real community over time.</span>
       </li>
-      <li class="service-item">
-        <span class="service-name">Brand Identity</span>
-        <span class="service-desc">Visual identity that makes your business look like it means business, from day one.</span>
+      <li>
+        <strong>Brand Identity</strong>
+        <span>Visual identity that makes your business look like it means business, from day one.</span>
       </li>
-      <li class="service-item">
-        <span class="service-name">Design Mentorship</span>
-        <span class="service-desc">One-on-one training for aspiring designers — from first brief to final, polished output.</span>
+      <li>
+        <strong>Design Mentorship</strong>
+        <span>One-on-one training for aspiring designers — from first brief to final, polished output.</span>
       </li>
     </ul>
-  </div>
+  </section>
 
-  <!-- ABOUT -->
-  <div id="about" class="section">
-    <div class="section-head">
-      <span class="section-label">About</span>
-      <h2>Who I am</h2>
+  <!-- About Section -->
+  <section id="about">
+    <div class="section-header">
+      <span>About</span>
+      <h2>Who I Am</h2>
     </div>
-    <p class="about-body" id="site-about">
-      I'm THEHNRI — a digital creative and founder of
+    <p class="about-text">
+      I'm <strong>THEHNRI</strong> — a digital creative and founder of
       <strong>Webtellisense</strong>, a visibility-first agency based in
       Eket, Akwa Ibom. I work with businesses that want to be found,
       remembered, and trusted online. Outside client work, I mentor young
       designers and build content that brings communities together.
       Every project I take on is personal.
     </p>
-  </div>
+  </section>
 
-  <!-- FOOTER / CONTACT -->
-  <footer id="contact">
-    <div class="footer-cta">
-      <h3>Let's work<br><em>together.</em></h3>
-      <a class="cta-link" href="https://webtellisense.com" target="_blank" rel="noopener">
-        Visit Webtellisense &rarr;
-      </a>
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="section-header">
+      <span>Contact</span>
+      <h2>Let's Work Together</h2>
     </div>
-    <div class="footer-meta">
-      <ul class="footer-links">
-        <li><a href="https://webtellisense.com" target="_blank" rel="noopener">webtellisense.com</a></li>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">WhatsApp</a></li>
-      </ul>
-      <p class="footer-copy">&copy; 2026 THEHNRI. All rights reserved.</p>
+
+    <!-- Form submission handler via Netlify -->
+    <form name="portfolio-contact" method="POST" data-netlify="true" class="contact-form">
+      <input type="hidden" name="form-name" value="portfolio-contact" />
+      
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your Name" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com" />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+
+    <!-- Direct Contact Links -->
+    <div class="direct-contact">
+      <p>Prefer to reach out directly?</p>
+      <div class="contact-buttons">
+        <a href="https://wa.me/2348146008949?text=Hi%20THEHNRI,%20I'd%20like%20to%20discuss%20a%20project!" target="_blank" class="whatsapp-btn">
+          Chat on WhatsApp &rarr;
+        </a>
+        <a href="mailto:enohfaiith@gmail.com" class="email-btn">
+          Email Me Directly &rarr;
+        </a>
+      </div>
     </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 THEHNRI. All rights reserved.</p>
+    <ul>
+      <li><a href="https://webtellisense.com" target="_blank">Webtellisense</a></li>
+    </ul>
   </footer>
-
-  <script>
-    // ── Load editable content from /content/ JSON files (edited via /admin) ──
-
-    // Site text (eyebrow, hero subtitle, about)
-    fetch('content/site.json')
-      .then(r => r.json())
-      .then(data => {
-        if (data.eyebrow) document.getElementById('site-eyebrow').textContent = data.eyebrow;
-        if (data.subtitle) document.getElementById('site-subtitle').textContent = data.subtitle;
-        if (data.about) {
-          const aboutEl = document.getElementById('site-about');
-          aboutEl.innerHTML = data.about.replace(/Webtellisense/, '<strong>Webtellisense</strong>');
-        }
-      })
-      .catch(() => { /* keep fallback text if this fails */ });
-
-    // Work / project cards
-    fetch('content/works.json')
-      .then(r => r.json())
-      .then(data => {
-        const grid = document.getElementById('work-grid');
-        if (!data.items || !data.items.length) return;
-
-        grid.innerHTML = data.items.map(item => `
-          <div class="work-card">
-            ${item.image ? `<img src="${item.image}" alt="${item.title}" style="width:100%; height:160px; object-fit:cover; margin-bottom:1rem; border:1px solid var(--border);">` : ''}
-            <span class="work-tag">${item.tag || ''}</span>
-            <p class="work-title">${item.title || ''}</p>
-            <p class="work-desc">${item.description || ''}</p>
-          </div>
-        `).join('');
-      })
-      .catch(() => { /* keep fallback cards if this fails */ });
-  </script>
 
 </body>
 </html>

@@ -15,6 +15,7 @@
   --text-muted: #8e8e93;
   --accent: #ffffff;
   --border-color: #222222;
+  --border-hover: #333333;
   --green-glow: #22c55e;
 }
 
@@ -45,7 +46,15 @@ nav {
   letter-spacing: 1.5px;
   color: var(--accent);
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.2s;
+}
+
+.logo:hover {
+  opacity: 0.9;
 }
 
 nav ul {
@@ -152,25 +161,51 @@ section {
 /* --- WORK GRID --- */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
 }
 
 .project-card {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
-  padding: 2.5rem;
-  border-radius: 12px;
+  padding: 2rem;
+  border-radius: 14px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
   background-color: var(--card-hover);
-  border-color: #333333;
+  border-color: var(--border-hover);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.project-img-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
+  background-color: #111111;
+  position: relative;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.03);
 }
 
 .project-card .tag {
@@ -179,21 +214,23 @@ section {
   letter-spacing: 1.5px;
   color: var(--text-muted);
   font-weight: 600;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.8rem;
   display: block;
 }
 
 .project-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   font-weight: 700;
   margin-bottom: 0.8rem;
+  color: var(--text-main);
+  letter-spacing: -0.3px;
 }
 
 .project-card p {
   color: var(--text-muted);
   font-size: 0.95rem;
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .link-btn {
@@ -201,11 +238,16 @@ section {
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
-  transition: opacity 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.2s, transform 0.2s;
+  margin-top: auto;
 }
 
 .link-btn:hover {
   opacity: 0.8;
+  transform: translateX(3px);
 }
 
 /* --- SERVICES LIST --- */
@@ -224,11 +266,12 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: background 0.2s;
+  transition: background 0.2s, border-color 0.2s;
 }
 
 .services-list li:hover {
   background-color: var(--card-hover);
+  border-color: var(--border-hover);
 }
 
 .services-list li strong {
@@ -245,10 +288,10 @@ section {
 
 /* --- ABOUT --- */
 .about-text {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   color: var(--text-muted);
   max-width: 850px;
-  line-height: 1.6;
+  line-height: 1.7;
   font-weight: 400;
 }
 
@@ -288,13 +331,15 @@ section {
   border-radius: 8px;
   color: var(--text-main);
   font-size: 0.95rem;
-  transition: border-color 0.2s;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
   border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
 }
 
 .submit-btn {
@@ -306,12 +351,17 @@ section {
   border-radius: 8px;
   cursor: pointer;
   font-size: 0.95rem;
+  font-family: inherit;
   transition: transform 0.15s, opacity 0.2s;
 }
 
 .submit-btn:hover {
   opacity: 0.9;
   transform: translateY(-2px);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
 }
 
 .direct-contact {
@@ -342,6 +392,9 @@ section {
   font-size: 0.9rem;
   font-weight: 600;
   transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .whatsapp-btn:hover, .email-btn:hover {
@@ -370,6 +423,7 @@ footer ul {
 footer ul li a {
   color: var(--text-muted);
   text-decoration: none;
+  transition: color 0.2s;
 }
 
 footer ul li a:hover {
@@ -378,8 +432,20 @@ footer ul li a:hover {
 
 /* --- RESPONSIVE MOBILE FIXES --- */
 @media (max-width: 768px) {
+  body {
+    padding: 0 1.2rem;
+  }
   nav ul {
     display: none;
+  }
+  .hero {
+    margin: 4.5rem auto 4rem auto;
+  }
+  section {
+    margin: 5rem auto;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
   .services-list li {
     flex-direction: column;

@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="dt-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#141414"/>
+      <stop offset="100%" stop-color="#0c0c0c"/>
+    </linearGradient>
+    <linearGradient id="dt-card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e1e1e"/>
+      <stop offset="100%" stop-color="#131313"/>
+    </linearGradient>
+    <filter id="dt-blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="24" result="blur" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="16" fill="url(#dt-bg)"/>
+
+  <!-- Subtle Isometric Isometric Grid -->
+  <g opacity="0.08" stroke="#ffffff" stroke-width="0.8">
+    <path d="M0 50 L800 450 M0 150 L800 550 M0 -50 L800 350 M0 250 L800 650"/>
+    <path d="M0 450 L800 50 M0 350 L800 -50 M0 550 L800 150 M0 650 L800 250"/>
+  </g>
+
+  <!-- Glow Background -->
+  <circle cx="200" cy="180" r="160" fill="#22c55e" opacity="0.08" filter="url(#dt-blur)"/>
+
+  <g transform="translate(40, 35)">
+    <!-- Canvas Frame -->
+    <rect width="720" height="430" rx="12" fill="#111111" stroke="#262626" stroke-width="1.5"/>
+
+    <!-- Creative Suite Toolbar / Header -->
+    <rect width="720" height="46" rx="12" fill="#181818"/>
+    <rect y="36" width="720" height="10" fill="#181818"/>
+    <line x1="0" y1="46" x2="720" y2="46" stroke="#262626" stroke-width="1"/>
+
+    <!-- Tool icons / indicators -->
+    <g transform="translate(25, 13)">
+      <rect width="20" height="20" rx="4" fill="#22c55e" fill-opacity="0.2" stroke="#22c55e"/>
+      <text x="5" y="15" fill="#22c55e" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700">T</text>
+      
+      <rect x="30" width="20" height="20" rx="4" fill="#222222"/>
+      <path d="M35 10 L45 10 M40 5 L40 15" stroke="#8e8e93" stroke-width="1.5"/>
+
+      <rect x="60" width="20" height="20" rx="4" fill="#222222"/>
+      <circle cx="70" cy="10" r="4" stroke="#8e8e93" stroke-width="1.5"/>
+
+      <text x="100" y="15" fill="#f5f5f7" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12" font-weight="700">MENTORSHIP CANVAS</text>
+      <text x="260" y="15" fill="#8e8e93" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11">&middot; Visual Identity &amp; Editorial Typography Lab</text>
+    </g>
+
+    <rect x="580" y="12" width="115" height="22" rx="5" fill="#1f2937" stroke="#374151"/>
+    <text x="590" y="27" fill="#9ca3af" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10" font-weight="600">HANDS-ON STUDIO</text>
+
+    <!-- Artboard Workspace Area -->
+    <!-- Left Artboard: Typography Specimen & Hierarchy -->
+    <g transform="translate(25, 65)">
+      <rect width="325" height="340" rx="10" fill="url(#dt-card)" stroke="#262626" stroke-width="1"/>
+      
+      <!-- Ruler Guides -->
+      <line x1="20" y1="40" x2="305" y2="40" stroke="#22c55e" stroke-dasharray="3,3" stroke-opacity="0.4"/>
+      <line x1="20" y1="130" x2="305" y2="130" stroke="#22c55e" stroke-dasharray="3,3" stroke-opacity="0.4"/>
+      
+      <text x="20" y="28" fill="#8e8e93" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10" font-weight="700" letter-spacing="1">MODULAR HIERARCHY LAB</text>
+      
+      <text x="20" y="75" fill="#ffffff" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="34" font-weight="800" letter-spacing="-1">Aa Bb Gg</text>
+      <text x="20" y="110" fill="#f5f5f7" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="18" font-weight="700">Plus Jakarta Sans</text>
+      <text x="20" y="125" fill="#8e8e93" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11">Weights: Light (300) &rarr; Bold (800)</text>
+
+      <!-- Design Rules List -->
+      <g transform="translate(20, 155)">
+        <rect width="285" height="42" rx="6" fill="#171717" stroke="#222222"/>
+        <text x="12" y="20" fill="#22c55e" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700">01. Optical Balance</text>
+        <text x="12" y="34" fill="#8e8e93" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10">Letter-spacing -2px for display headlines</text>
+
+        <rect y="50" width="285" height="42" rx="6" fill="#171717" stroke="#222222"/>
+        <text x="12" y="70" fill="#22c55e" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700">02. Spatial Rhythm</text>
+        <text x="12" y="84" fill="#8e8e93" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10">8pt fluid baseline system with strict ratio</text>
+
+        <rect y="100" width="285" height="42" rx="6" fill="#171717" stroke="#22c55e" stroke-opacity="0.4"/>
+        <text x="12" y="120" fill="#ffffff" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700">03. Creative Direction</text>
+        <text x="12" y="134" fill="#22c55e" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10">Direct 1-on-1 critique &amp; live production review</text>
+      </g>
+    </g>
+
+    <!-- Right Artboard: Palette & Vector Curvature Preview -->
+    <g transform="translate(370, 65)">
+      <rect width="325" height="340" rx="10" fill="url(#dt-card)" stroke="#262626" stroke-width="1"/>
+      
+      <text x="20" y="28" fill="#8e8e93" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10" font-weight="700" letter-spacing="1">COLOR TOKEN &amp; VECTOR MASTERY</text>
+
+      <!-- Swatches -->
+      <g transform="translate(20, 45)">
+        <rect width="65" height="55" rx="6" fill="#0d0d0d" stroke="#333333"/>
+        <text x="8" y="45" fill="#ffffff" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" font-weight="600">#0D0D0D</text>
+
+        <rect x="73" width="65" height="55" rx="6" fill="#141414" stroke="#333333"/>
+        <text x="81" y="45" fill="#ffffff" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" font-weight="600">#141414</text>
+
+        <rect x="146" width="65" height="55" rx="6" fill="#22c55e"/>
+        <text x="152" y="45" fill="#0d0d0d" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" font-weight="800">#22C55E</text>
+
+        <rect x="219" width="65" height="55" rx="6" fill="#f5f5f7"/>
+        <text x="225" y="45" fill="#0d0d0d" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" font-weight="800">#F5F5F7</text>
+      </g>
+
+      <!-- Vector Curves & Bézier Demonstration -->
+      <g transform="translate(20, 120)">
+        <rect width="285" height="140" rx="8" fill="#141414" stroke="#222222"/>
+        
+        <!-- Grid lines in vector box -->
+        <line x1="20" y1="70" x2="265" y2="70" stroke="#1d1d1d"/>
+        <line x1="142" y1="20" x2="142" y2="120" stroke="#1d1d1d"/>
+
+        <!-- Bezier Curves -->
+        <path d="M 30 110 C 70 15, 210 15, 255 110" fill="none" stroke="#22c55e" stroke-width="2.5"/>
+        
+        <!-- Handle Bars -->
+        <line x1="30" y1="110" x2="70" y2="15" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="2,2"/>
+        <circle cx="70" cy="15" r="4" fill="#3b82f6"/>
+        
+        <line x1="255" y1="110" x2="210" y2="15" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="2,2"/>
+        <circle cx="210" cy="15" r="4" fill="#3b82f6"/>
+
+        <circle cx="30" cy="110" r="5" fill="#ffffff"/>
+        <circle cx="255" cy="110" r="5" fill="#ffffff"/>
+        
+        <text x="88" y="125" fill="#8e8e93" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10" font-weight="600">Bézier Precision &amp; Form</text>
+      </g>
+
+      <!-- Reviewer Note -->
+      <g transform="translate(20, 275)">
+        <rect width="285" height="50" rx="6" fill="#181818" stroke="#262626"/>
+        <circle cx="22" cy="25" r="10" fill="#22c55e" fill-opacity="0.2"/>
+        <text x="18" y="29" fill="#22c55e" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12" font-weight="800">&check;</text>
+        <text x="40" y="22" fill="#f5f5f7" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700">Creative Feedback Loop</text>
+        <text x="40" y="38" fill="#8e8e93" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10">Student portfolio deliverable approved for launch</text>
+      </g>
+    </g>
+  </g>
+</svg>

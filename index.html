@@ -3,17 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>THEHNRI — Digital Creative & Brand Strategist</title>
+  <title>THEHNRI — Digital Creative &amp; Brand Strategist</title>
   
-  <!-- SEO & Social Sharing (Open Graph) -->
-  <meta name="description" content="Portfolio of THEHNRI — Digital Creative and Founder of Webtellisense. Based in Eket, Akwa Ibom." />
-  <meta property="og:title" content="THEHNRI — Digital Creative" />
-  <meta property="og:description" content="Helping businesses grow online through design, visibility strategy, and storytelling." />
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="THEHNRI — Digital Creative &amp; Brand Strategist" />
+  <meta name="description" content="Portfolio of THEHNRI — Digital Creative and Founder of Webtellisense. Helping businesses grow online through sharp design, visibility strategy, and storytelling. Based in Eket, Akwa Ibom." />
+  <meta name="author" content="THEHNRI" />
+  <meta name="theme-color" content="#0d0d0d" />
+  <meta name="color-scheme" content="dark" />
+
+  <!-- Open Graph / WhatsApp / Facebook Sharing -->
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="THEHNRI" />
+  <meta property="og:title" content="THEHNRI — Digital Creative &amp; Brand Strategist" />
+  <meta property="og:description" content="Helping businesses grow online through sharp design, visibility strategy, and storytelling. Based in Eket, Akwa Ibom." />
+  <meta property="og:image" content="/images/og-image.svg" />
+  <meta property="og:image:type" content="image/svg+xml" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="THEHNRI — Digital Creative &amp; Brand Strategist Portfolio" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter / X Sharing -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="THEHNRI — Digital Creative &amp; Brand Strategist" />
+  <meta name="twitter:description" content="Helping businesses grow online through sharp design, visibility strategy, and storytelling. Founder of Webtellisense." />
+  <meta name="twitter:image" content="/images/og-image.svg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+  <link rel="apple-touch-icon" href="/images/favicon.svg" />
+
   <!-- Google Fonts: Geometric Sans (Plus Jakarta Sans) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -54,7 +80,11 @@
     </div>
     
     <div class="projects-grid">
+      <!-- Project 1: Webtellisense -->
       <div class="project-card">
+        <div class="project-img-wrapper">
+          <img src="/images/webtellisense.svg" alt="Webtellisense Platform &amp; Visibility Engine Interface" class="project-img" loading="lazy" />
+        </div>
         <span class="tag">Digital Agency</span>
         <h3>Webtellisense</h3>
         <p>
@@ -62,10 +92,14 @@
           social content, Google Business Profile, and more. Built to make
           small businesses impossible to ignore.
         </p>
-        <a href="https://webtellisense.com" target="_blank" class="link-btn">Visit Agency &rarr;</a>
+        <a href="https://webtellisense.com" target="_blank" rel="noopener noreferrer" class="link-btn">Visit Agency &rarr;</a>
       </div>
 
+      <!-- Project 2: Heroes Challenge -->
       <div class="project-card">
+        <div class="project-img-wrapper">
+          <img src="/images/heroes-challenge.svg" alt="Heroes Challenge 30-Day Growth Program Interface" class="project-img" loading="lazy" />
+        </div>
         <span class="tag">Growth Program</span>
         <h3>Heroes Challenge</h3>
         <p>
@@ -75,7 +109,11 @@
         </p>
       </div>
 
+      <!-- Project 3: Design Training -->
       <div class="project-card">
+        <div class="project-img-wrapper">
+          <img src="/images/design-training.svg" alt="Design Training &amp; Mentorship Artboard Interface" class="project-img" loading="lazy" />
+        </div>
         <span class="tag">Mentorship</span>
         <h3>Design Training</h3>
         <p>
@@ -85,7 +123,11 @@
         </p>
       </div>
 
+      <!-- Project 4: Brand Storytelling -->
       <div class="project-card">
+        <div class="project-img-wrapper">
+          <img src="/images/brand-storytelling.svg" alt="Brand Storytelling &amp; Editorial Content Layout" class="project-img" loading="lazy" />
+        </div>
         <span class="tag">Content Strategy</span>
         <h3>Brand Storytelling</h3>
         <p>
@@ -150,18 +192,23 @@
       <h2>Let's Work Together</h2>
     </div>
 
-    <!-- Form submission handler via Netlify -->
-    <form name="portfolio-contact" method="POST" data-netlify="true" class="contact-form">
+    <!-- Form submission handler via Netlify Forms -->
+    <form name="portfolio-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
       <input type="hidden" name="form-name" value="portfolio-contact" />
+      <input type="hidden" name="subject" value="New inquiry from THEHNRI portfolio (%{formName})" />
+
+      <p style="display: none;">
+        <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+      </p>
       
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" required placeholder="Your Name" />
+        <input type="text" id="name" name="name" required placeholder="Your Name" autocomplete="name" />
       </div>
 
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required placeholder="you@example.com" />
+        <input type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email" />
       </div>
 
       <div class="form-group">
@@ -176,7 +223,7 @@
     <div class="direct-contact">
       <p>Prefer to reach out directly?</p>
       <div class="contact-buttons">
-        <a href="https://wa.me/2348146008949?text=Hi%20THEHNRI,%20I'd%20like%20to%20discuss%20a%20project!" target="_blank" class="whatsapp-btn">
+        <a href="https://wa.me/2348146008949?text=Hi%20THEHNRI,%20I'd%20like%20to%20discuss%20a%20project!" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
           Chat on WhatsApp &rarr;
         </a>
         <a href="mailto:enohfaiith@gmail.com" class="email-btn">
@@ -190,7 +237,7 @@
   <footer>
     <p>&copy; 2026 THEHNRI. All rights reserved.</p>
     <ul>
-      <li><a href="https://webtellisense.com" target="_blank">Webtellisense</a></li>
+      <li><a href="https://webtellisense.com" target="_blank" rel="noopener noreferrer">Webtellisense</a></li>
     </ul>
   </footer>
 
